@@ -28,6 +28,7 @@ $archive = "\\some\network\file\path"
 
 $DatetoDelete = $date.AddDays(-27)
 Get-ChildItem $logFile -Recurse  | Where-Object { $_.LastWriteTime -lt $DatetoDelete } | Remove-Item -force -recurse
+#delete logs after 27 days. Avoids issues in Feb. 
 
 $dateToNuke = $date.AddMonths(-6) 
 # deletes archive after 6 months
